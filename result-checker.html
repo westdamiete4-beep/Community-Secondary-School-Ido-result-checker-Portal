@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<!-- Import map: lets js/firebase.js use real npm-style specifiers like
+     "firebase/app" and "firebase/app-check" (the exact modular v9+
+     import syntax) while this stays a plain static site with no
+     bundler — the browser resolves these bare names to Google's CDN
+     URLs directly. Must appear before any <script type="module">. -->
+<script type="importmap">
+{
+  "imports": {
+    "firebase/app": "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js",
+    "firebase/app-check": "https://www.gstatic.com/firebasejs/12.16.0/firebase-app-check.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js",
+    "firebase/auth": "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js"
+  }
+}
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Check Result | Community Secondary School, Ido</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="flag-stripe"></div>
+
+<header class="site-header">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-placeholder.svg" alt="School logo" class="brand-logo" data-brand="logo" />
+      <div class="brand-text">
+        <span class="brand-name" data-brand="name">Community Secondary School, Ido</span>
+        <span class="brand-tag">Result Checker Portal</span>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <a href="index.html" class="btn btn-ghost btn-sm">Home</a>
+      <a href="admin-login.html" class="btn btn-primary btn-sm">Admin Login</a>
+    </div>
+  </div>
+</header>
+
+<section class="checker-wrap">
+  <div class="container">
+    <div class="form-card" id="checkerCard">
+      <h2 style="text-align:center;">Check Your Result</h2>
+      <p style="text-align:center;color:var(--ink-soft);margin-top:-6px;">Enter your details exactly as registered by the school.</p>
+
+      <form id="checkerForm" novalidate>
+        <div class="form-group">
+          <label for="admissionNo">Admission Number</label>
+          <input type="text" id="admissionNo" placeholder="e.g. CSS/IDO/001" autocomplete="off" required />
+          <div class="field-error" id="err-admissionNo"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="className">Class</label>
+            <select id="className" required>
+              <option value="">Loading classes…</option>
+            </select>
+            <div class="field-error" id="err-className"></div>
+          </div>
+          <div class="form-group">
+            <label for="pin">4-Digit PIN</label>
+            <input type="password" id="pin" inputmode="numeric" maxlength="4" placeholder="••••" autocomplete="off" required />
+            <div class="field-error" id="err-pin"></div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="session">Academic Session</label>
+            <select id="session" required>
+              <option value="">Loading sessions…</option>
+            </select>
+            <div class="field-error" id="err-session"></div>
+          </div>
+          <div class="form-group">
+            <label for="term">Term</label>
+            <select id="term" required>
+              <option value="">Select term</option>
+              <option value="First Term">First Term</option>
+              <option value="Second Term">Second Term</option>
+              <option value="Third Term">Third Term</option>
+            </select>
+            <div class="field-error" id="err-term"></div>
+          </div>
+        </div>
+
+        <div class="field-hint" style="margin-bottom:16px;">Your Admission Number and PIN were issued by the school office when you registered.</div>
+        <button type="submit" class="btn btn-primary btn-block" id="checkBtn">Check Result</button>
+      </form>
+    </div>
+
+    <div id="resultArea"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-bottom">© <span id="year"></span> <span data-brand="name">Community Secondary School, Ido</span>. All rights reserved. &middot; <a href="privacy-policy.html" style="color:inherit;text-decoration:underline;">Privacy Policy</a></div>
+</footer>
+
+<!-- html2canvas + jsPDF power the "Download as PDF" button -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script type="module" src="js/result-checker.js"></script>
+</body>
+</html>

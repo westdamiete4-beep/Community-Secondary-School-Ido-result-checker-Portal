@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<!-- Import map: lets js/firebase.js use real npm-style specifiers like
+     "firebase/app" and "firebase/app-check" (the exact modular v9+
+     import syntax) while this stays a plain static site with no
+     bundler — the browser resolves these bare names to Google's CDN
+     URLs directly. Must appear before any <script type="module">. -->
+<script type="importmap">
+{
+  "imports": {
+    "firebase/app": "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js",
+    "firebase/app-check": "https://www.gstatic.com/firebasejs/12.16.0/firebase-app-check.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js",
+    "firebase/auth": "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js"
+  }
+}
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy | Community Secondary School, Ido</title>
+<meta name="description" content="Privacy Policy for the Community Secondary School, Ido Result Checker Portal. Read what data we collect, why, and how it is protected." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="flag-stripe"></div>
+
+<header class="site-header">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-placeholder.svg" alt="School logo" class="brand-logo" data-brand="logo" />
+      <div class="brand-text">
+        <span class="brand-name" data-brand="name">Community Secondary School, Ido</span>
+        <span class="brand-tag">Result Checker Portal</span>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <a href="index.html" class="btn btn-ghost btn-sm">Home</a>
+      <a href="result-checker.html" class="btn btn-outline btn-sm">Check Result</a>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding-bottom:40px;">
+  <div class="container" style="max-width:820px;">
+    <span class="eyebrow">Legal</span>
+    <h1 style="font-size:clamp(1.8rem,3.5vw,2.6rem);">Privacy Policy</h1>
+    <p style="color:var(--ink-soft);" id="lastUpdated">Last updated: (loading)</p>
+
+    <div class="policy-body">
+      <p>
+        <span data-brand="name">Community Secondary School, Ido</span> ("the School", "we", "us") operates this
+        Result Checker Portal to let students securely view their academic results and to help school
+        administrators manage academic records. This policy explains what information we collect, why we
+        collect it, and how it is protected. Because most users of this portal are students under the age of
+        18, we've written it to be clear for parents and guardians as well.
+      </p>
+
+      <h2>1. Information We Collect</h2>
+      <p>We collect and store the following information. It is entered by school administrators; students and parents do not create accounts or submit data themselves:</p>
+      <ul>
+        <li><strong>Student records:</strong> full name, admission number, class, gender, date of birth, house, attendance, and a passport photograph.</li>
+        <li><strong>Student access credentials:</strong> a system-generated 4-digit PIN, used together with the admission number to view a result. This PIN is not a password chosen by the student and does not unlock anything beyond viewing their own published results.</li>
+        <li><strong>Academic records:</strong> subject scores, continuous assessment and examination marks, grades, class position, attendance, and teacher/principal remarks.</li>
+        <li><strong>Administrator accounts:</strong> the email address and password of school staff authorized to manage the portal, handled entirely by Firebase Authentication (we never see or store the password itself).</li>
+        <li><strong>School settings:</strong> the school's name, motto, logo, address, phone number, email, and principal's name, shown publicly across the site.</li>
+      </ul>
+      <p>We do <strong>not</strong> use cookies, third-party trackers, or advertising scripts. The portal does not ask students for any information directly; everything is entered by school staff.</p>
+
+      <h2>2. How We Use This Information</h2>
+      <ul>
+        <li>To let a student look up and view their own term result using their admission number, class, PIN, session and term.</li>
+        <li>To let administrators manage students, teachers, classes, subjects, sessions and results.</li>
+        <li>To automatically calculate totals, averages, grades and class positions.</li>
+        <li>To display school branding (name, logo, motto, contact details) consistently across every page.</li>
+      </ul>
+      <p>We do not sell, rent, or use this information for advertising, and we do not share it with any third party except the infrastructure provider described below.</p>
+
+      <h2>3. Where Data Is Stored</h2>
+      <p>
+        All data is stored using Google Firebase (Cloud Firestore for records, Firebase Authentication for
+        administrator sign-in). Firebase is a data processor acting on the School's instructions and maintains
+        its own security and compliance standards; you can review Google's practices in the
+        <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy and Security policy</a>.
+        Passport photographs and the school logo are stored as part of student and settings records within the same database.
+      </p>
+
+      <h2>4. How We Protect Information</h2>
+      <ul>
+        <li>Only authenticated school administrators can add, edit, publish, or delete records. This is enforced by Firebase security rules, not just by the interface.</li>
+        <li>A result is visible to a student only when it has been explicitly published, and only when the correct admission number, class and PIN are all provided together. Knowing just one of these is not enough.</li>
+        <li>Administrator accounts are protected by Firebase Authentication, with password reset handled securely by email.</li>
+      </ul>
+
+      <h2>5. Children's Privacy</h2>
+      <p>
+        Because this portal is built for a secondary school, most student records belong to minors. We collect
+        only what is necessary to identify a student and display their academic result. We do not collect
+        contact details, location data, or any information beyond what a school ordinarily keeps in its own
+        academic records. Student data is entered and managed exclusively by school staff, not by children
+        directly. Parents or guardians who have questions about a specific student's data should contact the
+        school office using the details below.
+      </p>
+
+      <h2>6. Data Retention</h2>
+      <p>
+        Student and result records are kept for as long as they are needed for the student's academic history,
+        consistent with the School's normal record-keeping practices. School administrators can edit or delete
+        student and result records directly from the dashboard at any time.
+      </p>
+
+      <h2>7. Your Rights</h2>
+      <p>
+        A student, parent, or guardian may request to see what information is held about a student, request a
+        correction of inaccurate information, or request deletion of a record, by contacting the school office
+        using the details below. School administrators can act on these requests directly through the Student
+        and Result Management screens.
+      </p>
+
+      <h2>8. Changes to This Policy</h2>
+      <p>
+        We may update this policy from time to time as the portal changes. The "Last updated" date at the top
+        of this page reflects the most recent revision. Continued use of the portal after a change means you
+        accept the updated policy.
+      </p>
+
+      <h2>9. Contact Us</h2>
+      <p>
+        For any questions about this policy or about a specific student's data, please contact the school
+        office directly:
+      </p>
+      <ul>
+        <li>Address: <span data-brand="address">Ido Local Government Area, Oyo State, Nigeria</span></li>
+        <li>Phone: <span data-brand="phone">+234 800 000 0000</span></li>
+        <li>Email: <span data-brand="email">info@csido.edu.ng</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-bottom">
+    © <span id="year"></span> <span data-brand="name">Community Secondary School, Ido</span>. All rights reserved.
+    &middot; <a href="index.html" style="color:inherit;text-decoration:underline;">Home</a>
+  </div>
+</footer>
+
+<script type="module">
+  import { db, doc, getDoc, COLLECTIONS } from "./js/firebase.js";
+  import { applyBranding, createVoiceGuide } from "./js/common.js";
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("lastUpdated").textContent = "Last updated: " + new Date().toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+
+  (async function loadBranding() {
+    try {
+      const snap = await getDoc(doc(db, COLLECTIONS.settings, "school"));
+      if (snap.exists()) applyBranding(snap.data());
+    } catch (err) {
+      console.warn("Could not load school settings:", err);
+    }
+  })();
+
+  createVoiceGuide(
+    "This is the Privacy Policy for the Result Checker Portal. It explains that the school collects student " +
+    "details such as name, admission number, class, and academic results, entered by school staff, in order to " +
+    "let students securely check their results. Data is stored using Firebase, protected by administrator login " +
+    "and a student PIN, is never sold or shared with advertisers, and parents or guardians can contact the " +
+    "school office to review, correct, or request deletion of a student's information."
+  );
+</script>
+</body>
+</html>
